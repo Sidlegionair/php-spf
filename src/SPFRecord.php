@@ -23,6 +23,8 @@ class SPFRecord
                 unset($this->mechanisms[$key]);
             }
         }
+        // Fix keys
+        $this->mechanisms = array_values($this->mechanisms);
     }
 
     /**

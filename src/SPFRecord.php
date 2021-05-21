@@ -17,6 +17,14 @@ class SPFRecord
 {
     private $mechanisms = [];
 
+    public function removeMechanism(AbstractMechanism $mechanismToRemove) {
+        foreach($this->mechanisms as $key => $mechanism) {
+            if($mechanism->getText() == $mechanismToRemove->getText()) {
+                unset($this->mechanisms[$key]);
+            }
+        }
+    }
+
     /**
      * @param AbstractMechanism $mechanism
      *
